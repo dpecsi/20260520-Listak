@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_20260520_Listák"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" MinHeight="500" Height="500" MinWidth="800" Width="800"
         FontSize="28" FontWeight="Bold">
     <Grid>
         <Grid.RowDefinitions>
@@ -17,18 +17,18 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="70" />
+            <ColumnDefinition Width="0.16*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <!-- TODO: elemek áthelyezése az egyik ListBoxból a másikba, aktivitás (IsEnabled) kezelése -->
-        <Button Grid.Column="1" Grid.Row="1" Content="&gt;" Margin="5" IsEnabled="False" />
-        <Button Grid.Column="1" Grid.Row="2" Content="&gt;&gt;" Margin="5" IsEnabled="False" />
-        <Button Grid.Column="1" Grid.Row="3" Content="&lt;" Margin="5" IsEnabled="False" />
-        <Button Grid.Column="1" Grid.Row="4" Content="&lt;&lt;" Margin="5" IsEnabled="False" />
+        <Button Grid.Column="1" Grid.Row="1" Content="&gt;" Margin="5" IsEnabled="False" Name="MoveRight" Click="MoveRight_Click" />
+        <Button Grid.Column="1" Grid.Row="2" Content="&gt;&gt;" Margin="5" IsEnabled="False" Name="MoveAllRight" Click="MoveAllRight_Click" />
+        <Button Grid.Column="1" Grid.Row="3" Content="&lt;" Margin="5" IsEnabled="False" Name="MoveLeft" Click="MoveLeft_Click" />
+        <Button Grid.Column="1" Grid.Row="4" Content="&lt;&lt;" Margin="5" IsEnabled="False" Name="MoveAllLeft" Click="MoveAllLeft_Click" />
 
         <TextBox Grid.Column="0" Grid.Row="0" Name="TextboxLeft" Background="Beige"
                  Margin="5" Text="Szöveg1" HorizontalContentAlignment="Center"
@@ -39,6 +39,10 @@
                 Click="ButtonAddLeft_Click" IsEnabled="True" />
         <Button Grid.Column="0" Grid.Row="6" Content="Töröl" Name="ButtonRemoveLeft" Margin="5"
                 Click="ButtonRemoveLeft_Click" IsEnabled="False" />
+        <Button Grid.Column="0" Grid.Row="7" Content="Mentés" Name="ButtonSaveLeft" Margin="5"
+                Click="ButtonSaveLeft_Click" IsEnabled="False" />
+        <Button Grid.Column="0" Grid.Row="8" Content="Betöltés" Name="ButtonLoadLeft" Margin="5"
+                Click="ButtonLoadLeft_Click" />
 
         <TextBox Grid.Column="2" Grid.Row="0" Name="TextboxRight" Background="Beige"
                  Margin="5" Text="Szöveg2" HorizontalContentAlignment="Center"
